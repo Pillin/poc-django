@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'import_export',
 
     'reconnaissances',
-    'speakers'
+    'speakers',
+    'companies'
 ]
 
 MIDDLEWARE = [

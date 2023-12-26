@@ -21,11 +21,13 @@ class Reconnaissance(models.Model):
         "Seniority", default="", blank=True, max_length=200)
     company_raw = models.CharField(
         "Compania",  default="", blank=True, max_length=200)
+    company = models.ManyToManyField(
+        "companies.Company", blank=True, null=True, related_name='reconnaissance')
     tendency_raw = models.CharField(
         "Tendency", default="", blank=True, max_length=200)
     speakers_raw = models.CharField(
         "Speakers", default="", blank=True, max_length=400)
-    speaker = models.ManyToManyField("speakers.Speaker", blank=True)
+    speaker = models.ManyToManyField("speakers.Speaker", blank=True, null=True)
     mode = models.CharField("Mode", default="", max_length=200)
     has_newsletter = models.BooleanField(
         "Newsletter", default=True, max_length=200)
